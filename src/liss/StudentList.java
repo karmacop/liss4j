@@ -4,8 +4,6 @@
  */
 package liss;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  *
@@ -17,18 +15,8 @@ public class StudentList extends LissGenericList<Student> {
         super();
     }
     
-    public StudentList(Object[] objects) {
-        super(objects, Student.class);
+    public StudentList(Object[] students) {
+        super(students, Student.class);
     }
-    
-    /*public StudentList() {
-        super();
-    }
-    
-    public StudentList(Object[] objects) {
-        super(objects,Student.class);
-    }*/
-
-    
     
 }

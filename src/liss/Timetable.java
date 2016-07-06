@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  *
- * @author MHS
+ * @author Glenn Tester
  */
 public class Timetable extends LissGeneric {
 

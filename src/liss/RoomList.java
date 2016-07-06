@@ -14,22 +14,22 @@ public class RoomList extends LissGenericList<Room> {
         super();
     }
     
-    public RoomList(Object[] objects) {
-        super(objects,Room.class);
+    public RoomList(Object[] rooms) {
+        super(rooms,Room.class);
     }
     
-    public Room getRoomFromRoomId(String string){
+    public Room getRoomFromRoomId(String roomId){
         for (Room room : this) {
-            if(string.equalsIgnoreCase( room.getRoomId() ) ) {
+            if(roomId.equals( room.getRoomId() ) ) {
                 return room;
             }
         }
         return null;
     }
     
-    public Room getRoomFromRoomCode(String string){
+    public Room getRoomFromRoomCode(String roomCode){
         for (Room room : this) {
-            if(string.equalsIgnoreCase( room.getRoomCode() ) ) {
+            if(roomCode.equals( room.getRoomCode() ) ) {
                 return room;
             }
         }

@@ -6,7 +6,7 @@ package liss;
 
 /**
  *
- * @author MHS
+ * @author Glenn Tester
  */
 public class TermList extends LissGenericList<Term> {
     
@@ -14,8 +14,8 @@ public class TermList extends LissGenericList<Term> {
         super();
     }
     
-    public TermList(Term[] objects) {
-        super(objects,Term.class);
+    public TermList(Term[] terms) {
+        super(terms,Term.class);
     }
 
 }

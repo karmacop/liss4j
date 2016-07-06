@@ -14,7 +14,7 @@ public class TimetableList extends LissGenericList<Timetable> {
         super();
     }
     
-    public TimetableList(Timetable[] objects) {
-        super(objects,Timetable.class);
+    public TimetableList(Timetable[] timetables) {
+        super(timetables,Timetable.class);
     }
 }

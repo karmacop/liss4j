@@ -14,13 +14,13 @@ public class CourseClassList extends LissGenericList<CourseClass> {
         super();
     }
     
-    public CourseClassList(CourseClass[] objects) {
-        super(objects,CourseClass.class);
+    public CourseClassList(CourseClass[] courseClasses) {
+        super(courseClasses,CourseClass.class);
     }
     
-    public CourseClass getCourseClassFromClassCode(String string){
+    public CourseClass getCourseClassFromClassCode(String classCode){
         for (CourseClass courseClass : this) {
-            if(string.equalsIgnoreCase( courseClass.getClassCode() ) ) {
+            if(classCode.equals( courseClass.getClassCode() ) ) {
                 return courseClass;
             }
         }

@@ -14,8 +14,8 @@ public class DailyDataList extends LissGenericList<DailyData> {
         super();
     }
     
-    public DailyDataList(DailyData[] objects) {
-        super(objects, DailyData.class);
+    public DailyDataList(DailyData[] dailyDatas) {
+        super(dailyDatas, DailyData.class);
     }
     
 }

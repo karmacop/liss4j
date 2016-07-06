@@ -11,6 +11,9 @@ import java.util.HashMap;
  * @author Glenn Tester
  */
 public class Hello extends LissGeneric {
+    
+    static final public String SIS = "SIS";
+    static final public String LISS_VERSION = "LissVersion";
 
     /**
      * 
@@ -18,23 +21,15 @@ public class Hello extends LissGeneric {
     public Hello() {
         super();
     }
-    
-    /**
-     * 
-     * @param map 
-     */
-    public Hello(HashMap<String,Object> map) {
-        super(map);
-    }
 
     /**
      * 
-     * @param SIS
-     * @param LissVersion 
+     * @param sis
+     * @param lissVersion 
      */
-    public Hello(String SIS, int LissVersion) {
-        this.put("SIS", SIS);
-        this.put("LissVersion", LissVersion);
+    public Hello(String sis, int lissVersion) {
+        this.put(SIS, sis);
+        this.put(LISS_VERSION, lissVersion);
     }
     
     /**
@@ -42,7 +37,7 @@ public class Hello extends LissGeneric {
      * @param sis 
      */
     public void setSis(String sis) {
-        this.put("SIS", sis);
+        this.put(SIS, sis);
     }
     
     /**
@@ -50,7 +45,7 @@ public class Hello extends LissGeneric {
      * @return 
      */
     public String getSis() {
-        return (String) this.get("SIS");
+        return (String) this.get(SIS);
     }
 
     /**
@@ -58,7 +53,7 @@ public class Hello extends LissGeneric {
      * @param lissVersion 
      */
     public void setLissVersion(int lissVersion) {
-        this.put("LissVersion", lissVersion);
+        this.put(LISS_VERSION, lissVersion);
     }
     
     /**
@@ -66,6 +61,6 @@ public class Hello extends LissGeneric {
      * @return 
      */
     public int getLissVersion() {
-        return (int) this.get("LissVersion");
+        return (int) this.get(LISS_VERSION);
     }
 }

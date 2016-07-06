@@ -9,9 +9,10 @@ package liss;
  * @author MHS
  */
 public class Util {
+    
+    final public static String LOG_NAME = "Liss4j";
 
     public static enum BellType {
-
         T('T', "Teaching period"),
         L('L', "recess or lunch"),
         O('O', "Out-of-timetable teaching period, i.e. before-school or after-school"),

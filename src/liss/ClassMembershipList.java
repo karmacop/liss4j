@@ -14,8 +14,8 @@ public class ClassMembershipList extends LissGenericList<ClassMembership> {
         super();
     }
 
-    public ClassMembershipList(ClassMembership[] objects) {
-        super(objects, ClassMembership.class);
+    public ClassMembershipList(ClassMembership[] classMemberships) {
+        super(classMemberships, ClassMembership.class);
     }
 
 }

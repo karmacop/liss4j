@@ -25,10 +25,16 @@ public class CourseClass extends LissGeneric {
     static final public String EDVAL_CLASS_CODE = "EdvalClassCode";
     
     /**
-     * 
+     * &lt;blank&gt; or omitted field:  A normal teaching class.
      */
     public static final String TEACHING = "";
+    /**
+     * A yard duty or other duty
+     */
     public static final String DUTY = "Duty";
+    /**
+     * A study period
+     */
     public static final String STUDY = "Study";
     public static final String ROLLCLASS = "RollClass";
     public static final String RTO = "RTO";
@@ -54,108 +60,108 @@ OnCall : On-call period (the teacher is free on this period unless they take a c
         super();
     }
 
-    public CourseClass(String ClassCode, String CourseName,
-            String DefaultTeacher, String Type,
-            String TtStructure, Date StartDate,
-            Date EndDate, String Colour,
-            String Form, String Faculty) {
-        this.put(CLASS_CODE, String.format("%1$20s", ClassCode.trim()).trim()); //courseCode> and <class identifier> separated by a space, e.g “9MAT 1
-        this.put(COURSE_NAME, CourseName); //curriculum
-        this.put(DEFAULT_TEACHER, String.format("%1$20s", DefaultTeacher.trim()).trim());
-        this.put(TYPE, Type); //course, house roll
-        this.put(TT_STRUCTURE, String.format("%1$20s", TtStructure.trim()).trim()); //timetable structure id then comma seperated terms eg 2012Junior 3,4
-        this.put(START_DATE, StartDate);
-        this.put(END_DATE, EndDate);
-        this.put(COLOUR, Colour); //0000ff
-        this.put(FORM, Form);
-        this.put(FACULTY, Faculty);
+    public CourseClass(String classCode, String courseName,
+            String defaultTeacher, String type,
+            String ttStructure, Date startDate,
+            Date endDate, String colour,
+            String form, String faculty) {
+        this.put(CLASS_CODE, String.format("%1$20s", classCode)); //courseCode> and <class identifier> separated by a space, e.g “9MAT 1
+        this.put(COURSE_NAME, courseName); //curriculum
+        this.put(DEFAULT_TEACHER, String.format("%1$20s", defaultTeacher));
+        this.put(TYPE, type); //course, house roll
+        this.put(TT_STRUCTURE, String.format("%1$20s", ttStructure)); //timetable structure id then comma seperated terms eg 2012Junior 3,4
+        this.put(START_DATE, startDate);
+        this.put(END_DATE, endDate);
+        this.put(COLOUR, colour); //0000ff
+        this.put(FORM, form);
+        this.put(FACULTY, faculty);
     }
 
-    public void setEdvalClassCode(String string) {
-        this.put("EdvalClassCode", String.format("%1$20s", string.trim()).trim());
+    public void setEdvalClassCode(String edvalClassCode) {
+        this.put(EDVAL_CLASS_CODE, edvalClassCode);
     }
 
     public String getEdvalClassCode() {
-        return (String) this.get("EdvalClassCode");
+        return (String) this.get(EDVAL_CLASS_CODE);
     }
 
-    public void setClassCode(String string) {
-        this.put("ClassCode", String.format("%1$20s", string.trim()).trim());
+    public void setClassCode(String classCode) {
+        this.put(CLASS_CODE, String.format("%1$20s", classCode));
     }
 
     public String getClassCode() {
-        return (String) this.get("ClassCode");
+        return (String) this.get(CLASS_CODE);
     }
 
-    public void setCourseName(String string) {
-        this.put("CourseName", string.trim());
+    public void setCourseName(String courseName) {
+        this.put(COURSE_NAME, courseName);
     }
 
     public String getCourseName() {
-        return (String) this.get("CourseName");
+        return (String) this.get(COURSE_NAME);
     }
 
-    public void setDefaultTeacher(String string) {
-        this.put("DefaultTeacher", String.format("%1$20s", string.trim()).trim());
+    public void setDefaultTeacher(String defaultTeacher) {
+        this.put(DEFAULT_TEACHER, String.format("%1$20s", defaultTeacher));
     }
 
     public String getDefaultTeacher() {
-        return (String) this.get("DefaultTeacher");
+        return (String) this.get(DEFAULT_TEACHER);
     }
 
-    public void setType(String string) {
-        this.put("Type", string.trim());
+    public void setType(String type) {
+        this.put(TYPE, type);
     }
 
     public String getType() {
-        return (String) this.get("Type");
+        return (String) this.get(TYPE);
     }
 
-    public void setTtStructure(String string) {
-        this.put("TtStructure", String.format("%1$20s", string.trim()).trim());
+    public void setTtStructure(String ttStructure) {
+        this.put(TT_STRUCTURE, String.format("%1$20s", ttStructure));
     }
 
     public String getTtStructure() {
-        return (String) this.get("TtStructure");
+        return (String) this.get(TT_STRUCTURE);
     }
 
-    public void setStartDate(String string) {
-        this.put("StartDate", string.trim());
+    public void setStartDate(String startDate) {
+        this.put(START_DATE, startDate);
     }
 
     public String getStartDate() {
-        return (String) this.get("StartDate");
+        return (String) this.get(START_DATE);
     }
 
-    public void setEndDate(String string) {
-        this.put("EndDate", string.trim());
+    public void setEndDate(String endDate) {
+        this.put(END_DATE, endDate);
     }
 
     public String getEndDate() {
-        return (String) this.get("EndDate");
+        return (String) this.get(END_DATE);
     }
 
-    public void setColour(String string) {
-        this.put("Colour", string.trim());
+    public void setColour(String colour) {
+        this.put(COLOUR, colour);
     }
 
     public String getColour() {
-        return (String) this.get("Colour");
+        return (String) this.get(COLOUR);
     }
 
-    public void setForm(String string) {
-        this.put("Form", string.trim());
+    public void setForm(String form) {
+        this.put(FORM, form);
     }
 
     public String getForm() {
-        return (String) this.get("Form");
+        return (String) this.get(FORM);
     }
 
-    public void setFaculty(String string) {
-        this.put("Faculty", string.trim());
+    public void setFaculty(String faculty) {
+        this.put(FACULTY, faculty);
     }
 
     public String getFaculty() {
-        return (String) this.get("Faculty");
+        return (String) this.get(FACULTY);
     }
 }

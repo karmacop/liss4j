@@ -14,8 +14,8 @@ public class CalendarList extends LissGenericList<Calendar> {
         super();
     }
     
-    public CalendarList(Calendar[] objects) {
-        super(objects,Calendar.class);
+    public CalendarList(Calendar[] calendars) {
+        super(calendars,Calendar.class);
     }
     
 }

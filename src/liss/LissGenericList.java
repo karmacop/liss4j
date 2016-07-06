@@ -34,7 +34,7 @@ public class LissGenericList<T extends LissGeneric> extends ArrayList<T> {
                 element.putAll( (HashMap) object );
                 this.add(element);
             } catch (InstantiationException | IllegalAccessException ex) {
-                Logger.getLogger(LissGenericList.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(liss.Util.LOG_NAME).log(Level.SEVERE, "Could not create prepopulated list.{1}", ex.getStackTrace());
             }
         }
     }
