@@ -55,13 +55,12 @@ public class AuthenticationIT {
      */
     @Test
     public void testGetSchool() {
-        //System.out.println("getSchool");
         Authentication instance = new Authentication();
         String expResult = "getSchool";
         instance.setSchool(expResult);
         String result = instance.getSchool();
         assertEquals(expResult, result);
-        //fail("The test case is a prototype.");
+        assertEquals(expResult, instance.get(Authentication.SCHOOL));
     }
 
     /**
@@ -69,13 +68,11 @@ public class AuthenticationIT {
      */
     @Test
     public void testSetSchool() {
-        //System.out.println("setSchool");
         String school = "setSchool";
         Authentication instance = new Authentication();
         instance.setSchool(school);
         assertEquals(school, instance.getSchool());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        assertEquals(school, instance.get(Authentication.SCHOOL));
     }
 
     /**
@@ -83,15 +80,12 @@ public class AuthenticationIT {
      */
     @Test
     public void testGetUserName() {
-        //System.out.println("getUserName");
         Authentication instance = new Authentication();
         String expResult = "getUserName";
         instance.setUserName(expResult);
         String result = instance.getUserName();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        
-        //fail("The test case is a prototype.");
+        assertEquals(expResult, instance.get(Authentication.USER_NAME));
     }
 
     /**
@@ -99,13 +93,11 @@ public class AuthenticationIT {
      */
     @Test
     public void testSetUserName() {
-        //System.out.println("setUserName");
         String userName = "setUserName";
         Authentication instance = new Authentication();
         instance.setUserName(userName);
         assertEquals(userName, instance.getUserName());
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        assertEquals(userName, instance.get(Authentication.USER_NAME));
     }
 
     /**
@@ -113,13 +105,12 @@ public class AuthenticationIT {
      */
     @Test
     public void testGetPassword() {
-        //System.out.println("getPassword");
         Authentication instance = new Authentication();
         String expResult = "getPassword";
+        instance.setPassword(expResult);
         String result = instance.getPassword();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        assertEquals(expResult, instance.get(Authentication.PASSWORD));
     }
 
     /**
@@ -127,13 +118,11 @@ public class AuthenticationIT {
      */
     @Test
     public void testSetPassword() {
-        //System.out.println("setPassword");
         String password = "setPassword";
         Authentication instance = new Authentication();
         instance.setPassword(password);
-        assertEquals(password, this);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        assertEquals(password, instance.getPassword());
+        assertEquals(password, instance.get(Authentication.PASSWORD));
     }
 
     /**
@@ -141,13 +130,12 @@ public class AuthenticationIT {
      */
     @Test
     public void testGetLissVersion() {
-        System.out.println("getLissVersion");
         Authentication instance = new Authentication();
-        int expResult = 0;
+        int expResult = 10000;
+        instance.setLissVersion(expResult);
         int result = instance.getLissVersion();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, instance.get(Authentication.LISS_VERSION));
     }
 
     /**
@@ -155,12 +143,10 @@ public class AuthenticationIT {
      */
     @Test
     public void testSetLissVersion() {
-        System.out.println("setLissVersion");
         int lissVersion = 0;
         Authentication instance = new Authentication();
         instance.setLissVersion(lissVersion);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(lissVersion, instance.get(Authentication.LISS_VERSION));
     }
 
     /**
@@ -168,13 +154,12 @@ public class AuthenticationIT {
      */
     @Test
     public void testGetUserAgent() {
-        System.out.println("getUserAgent");
         Authentication instance = new Authentication();
-        String expResult = "";
+        String expResult = "getUserAgent";
+        instance.setUserAgent(expResult);
         String result = instance.getUserAgent();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, instance.get(Authentication.USER_AGENT));
     }
 
     /**
@@ -182,12 +167,11 @@ public class AuthenticationIT {
      */
     @Test
     public void testSetUserAgent() {
-        System.out.println("setUserAgent");
-        String userAgent = "";
+        String userAgent = "setUserAgent";
         Authentication instance = new Authentication();
         instance.setUserAgent(userAgent);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(userAgent, instance.getUserAgent());
+        assertEquals(userAgent, instance.get(Authentication.USER_AGENT));
     }
     
 }
