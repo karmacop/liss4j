@@ -14,105 +14,83 @@ import java.util.Date;
  */
 public class Timetable extends LissGeneric {
 
-    public Timetable() {
-    }
-        
+    static final public String PERIOD = "Period";
+    static final public String CLASS_CODE = "ClassCode";
+    static final public String TEACHER_IDS = "TeacherIds";
+    static final public String ROOM_ID = "RoomId";
+    static final public String ROOM_CODE = "RoomCode";
+    static final public String TT_STRUCTURE = "TtStructure";
     
-
-        public Timetable(String Period, 
-                String ClassCode, String TeacherId, 
-                String RoomId, String RoomCode, 
-                String TtStructure) {
-            this.put("Period", String.format("%1$20s", Period.trim()).trim());
-            this.put("ClassCode", String.format("%1$20s", ClassCode.trim() ).trim());
-            this.put("TeacherIds", String.format("%1$20s", TeacherId.trim() ).trim());
-            this.put("RoomId", RoomId);
-            this.put("RoomCode", RoomCode);
-            this.put("TtStructure", TtStructure);
+    public Timetable() {
+        super();
+    }
+    
+        public Timetable(String period, 
+                String classCode, String teacherId, 
+                String roomId, String roomCode, 
+                String ttStructure) {
+            this.put(PERIOD, String.format("%1$20s", period));
+            this.put(CLASS_CODE, String.format("%1$20s", classCode));
+            this.put(TEACHER_IDS, String.format("%1$20s", teacherId));
+            this.put(ROOM_ID, roomId);
+            this.put(ROOM_CODE, roomCode);
+            this.put(TT_STRUCTURE, ttStructure);
         }
     
-    public void setPeriod(String string) {
-        this.put("Period", String.format("%1$20s", string.trim()).trim() );
+    public void setPeriod(String period) {
+        this.put(PERIOD, String.format("%1$20s", period) );
     }
     
     public String getPeriod() {
-        return (String) this.get("Period" );
+        return (String) this.get(PERIOD);
     }
     
-    public int getDayNumber() {
-        return (int) this.get("DayNumber" );
-    }
-    
-    public void setDayNumber(int dayNumber) {
-        this.put("DayNumber", dayNumber );
-    }
-    
-    public Date getDate() {
-        return (Date) this.get("Date" );
-    }
-    
-    public void setDate(Date date) {
-        this.put("Date", date );
-    }
-    
-    public void setClassCode(String string) {
-        this.put("ClassCode", String.format("%1$20s", string.trim()).trim() );
+    public void setClassCode(String classCode) {
+        this.put(CLASS_CODE, String.format("%1$20s", classCode) );
     }
     
     public String getClassCode() {
-        return (String) this.get("ClassCode" );
+        return (String) this.get(CLASS_CODE);
     }
     
-    public void setTeacherIDs(String string) {
-        this.put("TeacherId", String.format("%1$20s", string.trim()).trim() );
+    public void setTeacherIDs(String teacherIds) {
+        this.put(TEACHER_IDS, String.format("%1$20s", teacherIds) );
     }
     
     
-    public String getTeacherIDsString() {
-        return (String) this.get("TeacherIds" );
+    public String getTeacherIds() {
+        return (String) this.get(TEACHER_IDS);
     }
     
-    public ArrayList<String> getTeacherIDs() {
+    public ArrayList<String> getTeacherIdsArray() {
         ArrayList<String> returnList = new ArrayList<>();
         returnList.addAll(
-            Arrays.asList(((String) this.get("TeacherIds" )).split(","))
+            Arrays.asList(((String) this.get(TEACHER_IDS )).split(","))
         );
         return returnList;
     }
     
-    public String getTeacherCodesString() {
-        return (String) this.get("TeacherCodes" );
-    }
-    
-    public ArrayList<String> getTeacherCodes() {
-        ArrayList<String> returnList = new ArrayList<>();
-        returnList.addAll(
-            Arrays.asList(((String) this.get("TeacherCodes" )).split(","))
-        );
-        return returnList;
-    }
-    
-    public void setRoomId(String string) {
-        this.put("RoomId", string );
+    public void setRoomId(String roomId) {
+        this.put(ROOM_ID, roomId );
     }
     
     public String getRoomId() {
-        return (String) this.get("RoomId" );
+        return (String) this.get(ROOM_ID);
     }
     
-    public void setRoomCode(String string) {
-        this.put("RoomCode", string );
+    public void setRoomCode(String roomCode) {
+        this.put(ROOM_CODE, roomCode );
     }
     
     public String getRoomCode() {
-        return (String) this.get("RoomCode" );
+        return (String) this.get(ROOM_CODE);
     }
     
-    public void setTtStructure(String string) {
-        this.put("TtStructure", string );
+    public void setTtStructure(String ttStructure) {
+        this.put(TT_STRUCTURE, ttStructure );
     }
     
     public String getTtStructure() {
-        return (String) this.get("TtStructure" );
+        return (String) this.get(TT_STRUCTURE);
     }
 }

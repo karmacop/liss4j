@@ -18,9 +18,9 @@ public class TeacherList extends LissGenericList<Teacher> {
         super(teachers,Teacher.class);
     }
     
-    public Teacher getTeacherFromLastCommaFirstName(String string){
+    public Teacher getTeacherFromLastCommaFirstName(String teacherName){
         for (Teacher teacher : this) {
-            if(string.equalsIgnoreCase( (teacher.getSurname()+","+teacher.getFirstName()).toLowerCase() )) {
+            if(teacherName.equals( (teacher.getSurname()+","+teacher.getFirstName()).toLowerCase() )) {
                 return teacher;
             }
         }
@@ -38,7 +38,7 @@ public class TeacherList extends LissGenericList<Teacher> {
     
     public Teacher getTeacherFromTeacherCode(String teacherCode){
         for (Teacher teacher : this) {
-            if(teacherCode.equalsIgnoreCase( teacher.getTeacherCode() ) ) {
+            if(teacherCode.equals( teacher.getTeacherCode() ) ) {
                 return teacher;
             }
         }
