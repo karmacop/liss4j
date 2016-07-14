@@ -19,7 +19,7 @@
 package karmacop.liss4j;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,13 +38,15 @@ public class LissGenericList<T extends LissGeneric> extends ArrayList<T> {
      * @param objects
      * @param c 
      */
+    @SuppressWarnings("unchecked")
     public LissGenericList(Object[] objects, Class<T> c) {
         this();
         for (Object object : objects) {
             T element;
             try {
                 element = c.newInstance();
-                element.putAll( (HashMap) object );
+                
+                element.putAll( (Map<? extends String,? extends Object>) object );
                 this.add(element);
             } catch (InstantiationException | IllegalAccessException ex) {
                 Logger.getLogger(karmacop.liss4j.Util.LOG_NAME).log(Level.SEVERE, "Could not create prepopulated list.{1}", ex.getStackTrace());
